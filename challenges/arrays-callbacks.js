@@ -25,14 +25,11 @@ The zoos want to display both the scientific name and the animal name in front o
 
 const displayNames = [];
 
-let pusherOne = zooAnimals.forEach(function(item) {
-  return displayNames.push(item.animal_name, item.scientific_name);
-});
-
-// let pusherTwo = zooAnimals.forEach(function(item) {
-//   return displayNames.push(item.scientific_name);
+// let pusher = zooAnimals.forEach(function(item) {
+//   return displayNames.push(item.animal_name, item.scientific_name);
 // });
 
+let pusher = zooAnimals.forEach(item => displayNames.push(item.animal_name, item.scientific_name))
 
 
 // console.log(displayNames);
@@ -45,9 +42,12 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 
 */
 
-const lowCaseAnimalNames = zooAnimals.map(function(item){
-  return item.animal_name.toLowerCase();
-});
+// const lowCaseAnimalNames = zooAnimals.map(function(item){
+//   return item.animal_name.toLowerCase();
+// });
+
+
+const lowCaseAnimalNames = zooAnimals.map(item  => item.animal_name.toLowerCase())
 
 console.log(lowCaseAnimalNames);
 
@@ -56,9 +56,13 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-const lowPopulationAnimals = zooAnimals.filter(function(item){
-  return item.population < 5;
-});
+// const lowPopulationAnimals = zooAnimals.filter(function(item){
+//   return item.population < 5;
+// });
+// console.log(lowPopulationAnimals);
+
+const lowPopulationAnimals = zooAnimals.filter(item => item.population < 5)
+
 console.log(lowPopulationAnimals);
 
 /* Request 4: .reduce() 
@@ -66,9 +70,12 @@ console.log(lowPopulationAnimals);
 The zoos need to know their total animal population across the United States. Find the total population from all the zoos using the .reduce() method. Remember the reduce method takes two arguments: a callback (which itself takes two args), and an initial value for the count.
 
 */
-let populationTotal = zooAnimals.reduce(function(acc, item){
-  return acc + item.population;
-}, 0);
+// let populationTotal = zooAnimals.reduce(function(acc, item){
+//   return acc + item.population;
+// }, 0);
+
+let populationTotal = zooAnimals.reduce((acc, item) => acc + item.population, 0)
+
 
 console.log(populationTotal);
 
@@ -85,6 +92,8 @@ console.log(populationTotal);
 let consume = function (a, b, cb) {
   return cb(a, b);
 }
+
+let consumeArrow = (a, b, cb) => cb(a, b)
 
 /* Step 2: Create several functions to callback with consume();
   * Create a function named add that returns the sum of two numbers
