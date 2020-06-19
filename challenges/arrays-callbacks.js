@@ -101,17 +101,15 @@ let consumeArrow = (a, b, cb) => cb(a, b)
   * Create a function named greeting that accepts a first and last name and returns "Hello first-name last-name, nice to meet you!"
 */
 
-function add(x, y) {
-  return x + y;
-}
+let add = (x, y) => x + y 
 
-function multiply(x, y) {
-  return x * y;
-}
+let multiply = (x, y) => x * y
 
-function greeting(firstName, lastName) {
-  return `Hello ${firstName} ${lastName}, nice to meet you!`;
-}
+// function greeting(firstName, lastName) {
+//   return `Hello ${firstName} ${lastName}, nice to meet you!`;
+// }
+
+let greeting = (firstName, lastName) => `Hello ${firstName} ${lastName}, nice to meet you!`
 
 /* Step 3: Check your work by un-commenting the following calls to consume(): */
 console.log(consume(2, 2, add)); // 4
