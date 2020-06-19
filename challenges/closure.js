@@ -22,6 +22,18 @@ myFunction();
 
 /* Task 2: Counter */
 
+function summation(num){
+
+  let sum = 0;
+
+  for (let i = 0; i <= num; i++) {
+    sum +=i;
+  }
+
+  return sum;
+}
+
+console.log(summation(4));
 
 
 /* Create a function called `summation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
